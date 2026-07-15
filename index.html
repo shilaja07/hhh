@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Details</title>
+</head>
+<body>
+
+<h2>Student Result</h2>
+
+<?php
+
+echo "Register Number : " . $_POST["regno"] . "<br><br>";
+echo "Student Name : " . $_POST["name"] . "<br><br>";
+echo "Department : " . $_POST["dept"] . "<br><br>";
+echo "Gender : " . $_POST["gender"] . "<br><br>";
+
+echo "Subjects : ";
+if(isset($_POST["subject"]))
+{
+    foreach($_POST["subject"] as $sub)
+    {
+        echo $sub . " ";
+    }
+}
+echo "<br><br>";
+
+echo "Total Marks : " . $_POST["marks"] . "<br><br>";
+
+if($_POST["marks"] >= 50)
+{
+    echo "Result : PASS";
+}
+else
+{
+    echo "Result : FAIL";
+}
+
+?>
+
+</body>
+</html>
